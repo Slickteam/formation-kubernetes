@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: db
+  name: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: db
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_DATABASE
+          value: chevereto
+        - name: MYSQL_PASSWORD
+          value: chevereto
+        - name: MYSQL_ROOT_PASSWORD
+          value: chevereto_root
+        - name: MYSQL_USER
+          value: chevereto
+        image: mariadb
+        name: db
+        resources: {}
+      restartPolicy: Always
+status: {}
