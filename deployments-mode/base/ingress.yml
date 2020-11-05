@@ -6,7 +6,8 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - http:
+  - host: nginx.172.18.0.5.nip.io
+    http:
       paths:
       - path: /
         backend:
