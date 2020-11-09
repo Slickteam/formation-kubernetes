@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grid
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - grid-gateway
+  http:
+  - match:
+    - uri:   
+        prefix: /
+    route:
+    - destination:
+        host: grid
+        port:
+          number: 8080
+        subset: green

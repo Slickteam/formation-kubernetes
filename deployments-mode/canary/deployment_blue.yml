@@ -1,0 +1,29 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grid-blue
+  labels:
+    app: grid
+    version: blue
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: grid
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: grid
+        version: blue
+    spec:
+      containers:
+      - name: app
+        image: jerem44/grid:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: COLOR
+          value: "#64b5f6"
+        resources: {}
