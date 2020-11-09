@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redis
+    application: dockercoins
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+      application: dockercoins
+  template:
+    metadata:
+      labels:
+        app: redis
+        application: dockercoins
+    spec:
+      containers:
+      - image: redis
+        name: redis

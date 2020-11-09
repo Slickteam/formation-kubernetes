@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dockercoins
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: dockercoins.172.18.0.5.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: webui
+          servicePort: 80

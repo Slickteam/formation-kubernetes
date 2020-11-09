@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: worker
+  name: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+      - image: jerem44/worker:{{ .Values.version }}
+        name: worker
+        imagePullPolicy: IfNotPresent
+        readinessProbe:
+          exec:
+            command:
+            - "sh"
+            - "-c"
+            - "curl -X POST -d 'ceci est un test' http://hasher"
+          periodSeconds: 1
+        resources: {}
+status: {}

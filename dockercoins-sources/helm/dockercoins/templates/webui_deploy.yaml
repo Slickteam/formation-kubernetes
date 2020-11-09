@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webui
+    application: dockercoins
+  name: webui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webui
+      application: dockercoins
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: webui
+        application: dockercoins
+    spec:
+      containers:
+      - image: jerem44/webui:{{ .Values.version }}
+        name: webui
+        imagePullPolicy: IfNotPresent
+        resources: {}
+status: {}

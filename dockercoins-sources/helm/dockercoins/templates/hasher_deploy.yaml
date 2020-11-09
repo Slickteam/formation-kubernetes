@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hasher
+    application: dockercoins
+  name: hasher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hasher
+      application: dockercoins
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: hasher
+        application: dockercoins
+    spec:
+      containers:
+      - image: jerem44/hasher:{{ .Values.version }}
+        name: hasher
+        imagePullPolicy: IfNotPresent
+        resources: {}
+status: {}

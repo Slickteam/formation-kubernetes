@@ -1,0 +1,3 @@
+version: dev
+ingress:
+  host: dockercoins.172.18.0.5.nip.io
