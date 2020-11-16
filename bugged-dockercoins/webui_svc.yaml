@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: webui
+    application: dockercoins
+  name: webui
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 31111
+  selector:
+    app: webui
+    application: dockercoins
+  type: NodePort
+status:
+  loadBalancer: {}
