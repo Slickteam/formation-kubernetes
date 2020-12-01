@@ -16,14 +16,6 @@ spec:
         app: worker
     spec:
       containers:
-      - image: jerem44/worker:v0.1
+      - image: dockercoins/worker:v0.1
         name: worker
-        readinessProbe:
-          exec:
-            command:
-            - "sh"
-            - "-c"
-            - "curl -X POST -d 'ceci est un test' http://hasher"
-          periodSeconds: 1
         resources: {}
-status: {}
