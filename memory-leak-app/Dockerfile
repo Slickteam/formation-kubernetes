@@ -4,6 +4,6 @@ COPY memLeak.c .
 RUN gcc -o memLeak memLeak.c -static
 RUN ls
 
-FROM scratch
+FROM alpine
 COPY --from=mybuildstage /build/memLeak .
 CMD ["./memLeak"]
