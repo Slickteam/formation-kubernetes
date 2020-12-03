@@ -4,6 +4,7 @@ metadata:
   labels:
     app: rng
     application: dockercoins
+    toto: test
   name: rng
 spec:
   replicas: 1
@@ -17,6 +18,8 @@ spec:
       labels:
         app: rng
         application: dockercoins
+        titi: tata
+        aaa: bbb
     spec:
       containers:
       - image: dockercoins/rng:v0.1

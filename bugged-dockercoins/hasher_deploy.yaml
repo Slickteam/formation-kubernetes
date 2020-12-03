@@ -4,6 +4,7 @@ metadata:
   labels:
     app: hasher
     application: dockercoins
+    label: deploy
   name: hasher
 spec:
   replicas: 1
@@ -17,6 +18,7 @@ spec:
       labels:
         app: hasher
         application: dockercoins
+        label: pod
     spec:
       containers:
       - image: dockercoins/hasher:v0.1

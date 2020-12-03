@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     app: hasher
+    application: dockercoins
   name: hasher
 spec:
   ports:
@@ -11,5 +12,6 @@ spec:
     targetPort: 800
   selector:
     app: hasher
+    application: dockercoins
 status:
   loadBalancer: {}

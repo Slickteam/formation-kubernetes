@@ -3,17 +3,20 @@ kind: Deployment
 metadata:
   labels:
     app: worker
+    application: dockercoins
   name: worker
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: worker
+      application: dockercoins
   strategy: {}
   template:
     metadata:
       labels:
         app: worker
+        application: dockercoins
     spec:
       containers:
       - image: dockercoins/worker:v0.1
