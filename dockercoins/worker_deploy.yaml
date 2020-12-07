@@ -18,4 +18,8 @@ spec:
       containers:
       - image: dockercoins/worker:v0.1
         name: worker
+        livenessProbe:
+          exec:
+            command: ["curl", "-X", "POST", "-d", "ceci est test", "http://hasher"]
         resources: {}
+
