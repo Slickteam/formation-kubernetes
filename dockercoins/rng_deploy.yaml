@@ -10,7 +10,6 @@ spec:
   selector:
     matchLabels:
       app: rng
-      application: dockercoins
   strategy: {}
   template:
     metadata:
@@ -21,9 +20,3 @@ spec:
       containers:
       - image: dockercoins/rng:v0.1
         name: rng
-        readinessProbe:
-          httpGet:
-            path: /32
-            port: 80
-        resources: {}
-status: {}

@@ -13,7 +13,4 @@ spec:
     nodePort: 31111
   selector:
     app: webui
-    application: dockercoins
   type: NodePort
-status:
-  loadBalancer: {}

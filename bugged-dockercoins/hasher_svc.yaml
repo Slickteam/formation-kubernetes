@@ -12,6 +12,3 @@ spec:
     targetPort: 800
   selector:
     app: hasher
-    application: dockercoins
-status:
-  loadBalancer: {}

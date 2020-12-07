@@ -3,7 +3,6 @@ kind: Service
 metadata:
   labels:
     app: webui
-    version: v1
     application: dockercoins
   name: webui
 spec:
@@ -14,7 +13,4 @@ spec:
     nodePort: 30000
   selector:
     app: webui
-    application: dockercoins
   type: NodePort
-status:
-  loadBalancer: {}

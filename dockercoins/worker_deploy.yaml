@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: worker
+    application: dockercoins
   name: worker
 spec:
   replicas: 1
@@ -14,12 +15,8 @@ spec:
     metadata:
       labels:
         app: worker
+        application: dockercoins
     spec:
       containers:
       - image: dockercoins/worker:v0.1
         name: worker
-        livenessProbe:
-          exec:
-            command: ["curl", "-X", "POST", "-d", "ceci est test", "http://hasher"]
-        resources: {}
-
