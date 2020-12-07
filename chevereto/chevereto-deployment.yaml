@@ -32,3 +32,11 @@ spec:
         name: chevereto
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/html/images
+          name: chevereto-images
+      restartPolicy: Always
+      volumes:
+      - name: chevereto-images
+        persistentVolumeClaim:
+          claimName: chevereto-images-pvc
