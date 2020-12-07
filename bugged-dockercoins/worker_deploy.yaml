@@ -10,16 +10,12 @@ spec:
   selector:
     matchLabels:
       app: worker
-      application: dockercoins
   strategy: {}
   template:
     metadata:
       labels:
         app: worker
-        application: dockercoins
     spec:
       containers:
       - image: dockercoins/worker:v0.1
         name: worker
-        resources: {}
-status: {}

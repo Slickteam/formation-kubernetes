@@ -10,8 +10,6 @@ spec:
   selector:
     matchLabels:
       app: webui
-      application: dockercoins
-  strategy: {}
   template:
     metadata:
       labels:
@@ -21,5 +19,3 @@ spec:
       containers:
       - image: dockercoins/webui:v0.1
         name: webui
-        resources: {}
-status: {}

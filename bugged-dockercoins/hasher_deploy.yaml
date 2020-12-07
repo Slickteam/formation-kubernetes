@@ -4,24 +4,19 @@ metadata:
   labels:
     app: hasher
     application: dockercoins
-    label: deploy
   name: hasher
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: hasher
-      application: dockercoins
   strategy: {}
   template:
     metadata:
       labels:
         app: hasher
         application: dockercoins
-        label: pod
     spec:
       containers:
       - image: dockercoins/hasher:v0.1
         name: hasher
-        resources: {}
-status: {}

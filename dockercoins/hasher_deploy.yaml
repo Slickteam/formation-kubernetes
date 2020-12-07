@@ -10,7 +10,6 @@ spec:
   selector:
     matchLabels:
       app: hasher
-      application: dockercoins
   strategy: {}
   template:
     metadata:
@@ -21,5 +20,4 @@ spec:
       containers:
       - image: dockercoins/hasher:v0.1
         name: hasher
-        resources: {}
-status: {}
+
