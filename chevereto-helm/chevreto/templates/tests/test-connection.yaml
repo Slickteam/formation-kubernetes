@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "chevreto.fullname" . }}-test-connection"
+  labels:
+    {{- include "chevreto.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "chevreto.fullname" . }}:{{ .Values.nodeport }}']
+  restartPolicy: Never
