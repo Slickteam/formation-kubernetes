@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chevereto
+spec:
+  selector:
+    matchLabels:
+      app: chevereto
+  template:
+    spec:
+      containers:
+      - image: nmtan/chevereto
+        name: chevereto
+        volumeMounts:
+        - mountPath: /var/www/html/images
+          name: chevereto-images
+      volumes:
+      - name: chevereto-images
+        persistentVolumeClaim:
+          claimName: chevereto-images-pvc

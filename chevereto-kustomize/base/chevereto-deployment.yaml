@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: chevereto
+  name: chevereto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chevereto
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: chevereto
+    spec:
+      containers:
+      - env:
+        - name: CHEVERETO_DB_HOST
+          value: db
+        - name: CHEVERETO_DB_NAME
+          value: chevereto
+        - name: CHEVERETO_DB_PASSWORD
+          value: chevereto
+        - name: CHEVERETO_DB_PREFIX
+          value: chv_
+        - name: CHEVERETO_DB_USERNAME
+          value: chevereto
+        image: nmtan/chevereto
+        name: chevereto
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
