@@ -7,11 +7,9 @@ metadata:
 spec:
   ports:
   - port: 80
-  {{ if eq .Values.env "PROD" }}
-
+  {{- if ne .Values.env "PROD" }}
     nodePort: {{ .Values.nodePort }}
   type: NodePort
-  {{ end }}
+  {{- end }}
   selector:
     app: chevereto
-

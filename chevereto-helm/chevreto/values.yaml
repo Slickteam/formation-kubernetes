@@ -1,5 +1,5 @@
 nodePort: 32101
-env: PROD # Other possible value : LOCAL
+env: PROD # Other possible value : DEV
 db:
   ip: 10.0.2.15
   port: 32768

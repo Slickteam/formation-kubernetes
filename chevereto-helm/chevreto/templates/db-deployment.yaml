@@ -1,4 +1,4 @@
-{{- if ne .Values.env "PROD" -}}
+{{- if ne .Values.env "PROD" }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -31,4 +31,4 @@ spec:
         image: mariadb
         name: db
       restartPolicy: Always
-{{- end -}}
+{{- end }}

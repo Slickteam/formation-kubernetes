@@ -1,4 +1,4 @@
-{{ if eq .Values.env "PROD" }}
+{{- if eq .Values.env "PROD" }}
 apiVersion: v1
 kind: Endpoints
 metadata:
@@ -8,4 +8,4 @@ subsets:
     - ip: {{ .Values.db.ip }} 
   ports:
     - port: {{ .Values.db.port }} 
-{{ end }}
+{{- end }}

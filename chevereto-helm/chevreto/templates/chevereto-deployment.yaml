@@ -32,7 +32,7 @@ spec:
         name: chevereto
         ports:
         - containerPort: 80
-      {{ if eq .Values.env "PROD" }}
+      {{- if eq .Values.env "PROD" }}
         volumeMounts:
         - mountPath: /var/www/html/images
           name: chevereto-images
@@ -40,6 +40,6 @@ spec:
       - name: chevereto-images
         persistentVolumeClaim:
           claimName: chevereto-images-pvc
-      {{ end }}
+      {{- end }}
       restartPolicy: Always
 

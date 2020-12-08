@@ -1,4 +1,4 @@
-{{- if eq .Values.env "PROD" -}}
+{{- if eq .Values.env "PROD" }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -11,4 +11,4 @@ spec:
  resources:
    requests:
      storage: 100Mi
-{{- end -}}
+{{- end }}
