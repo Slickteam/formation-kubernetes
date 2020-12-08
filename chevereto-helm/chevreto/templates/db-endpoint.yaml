@@ -1,0 +1,11 @@
+{{ if eq .Values.env "PROD" }}
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: db
+subsets:
+- addresses:
+    - ip: {{ .Values.db.ip }} 
+  ports:
+    - port: {{ .Values.db.port }} 
+{{ end }}

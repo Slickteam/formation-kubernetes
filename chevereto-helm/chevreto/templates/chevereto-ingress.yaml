@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ name: chevereto
+ annotations:
+   ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+ rules:
+ - host: {{ .Values.host }}
+   http:
+     paths:
+     - path: /
+       backend:
+         serviceName: chevereto
+         servicePort: 80

@@ -1,1 +1,6 @@
 nodePort: 32101
+env: PROD # Other possible value : LOCAL
+db:
+  ip: 10.0.2.15
+  port: 32768
+host: "chevereto.172.18.0.2.nip.io"

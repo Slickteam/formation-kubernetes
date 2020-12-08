@@ -1,3 +1,4 @@
+{{- if ne .Values.env "PROD" -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,11 +30,5 @@ spec:
           value: chevereto
         image: mariadb
         name: db
-        volumeMounts:
-        - mountPath: /var/lib/mysql
-          name: chevereto-db
       restartPolicy: Always
-      volumes:
-      - name: chevereto-db
-        persistentVolumeClaim:
-          claimName: chevereto-db-pvc 
+{{- end -}}

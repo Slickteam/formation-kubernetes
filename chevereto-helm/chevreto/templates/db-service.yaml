@@ -9,5 +9,7 @@ spec:
   - port: 3306
     protocol: TCP
     targetPort: 3306
+  {{- if ne .Values.env "PROD" -}}
   selector:
     app: db
+  {{- end -}}
