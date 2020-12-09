@@ -5,3 +5,7 @@ bases:
  - ../../base
 resources:
   - db-deployment.yaml
+
+patches:
+  - db-service_patch.yaml
+  - chevereto-service_patch.yaml

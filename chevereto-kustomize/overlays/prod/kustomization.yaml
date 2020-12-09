@@ -5,5 +5,8 @@ bases:
  - ../../base
 resources:
   - images-pvc.yaml
+  - chevereto-ingress.yaml
+  - db-endpoint.yaml
 patches:
   - chevereto-deployment_patch.yaml
+  - db-service_patch.yaml 
