@@ -1,1 +1,2 @@
 nodePort: 30001
+env: DEV
